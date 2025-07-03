@@ -19,7 +19,7 @@ pipeline {
        
         stage('Compile') {
             steps {
-                sh "./mwvn compile"
+                sh "./mvnw compile"
             }
         }
         
