@@ -19,19 +19,19 @@ pipeline {
        
         stage('Compile') {
             steps {
-                sh "mvn compile"
+                sh "./mwvn compile"
             }
         }
         
         stage('Tests') {
             steps {
-                sh "mvn clean test -X -DskipTests=true"
+                sh "./mvnw clean test -X -DskipTests=true"
             }
         }
         
         stage('Build') {
             steps {
-                sh "mvn package -DskipTests=true"
+                sh "./mvnw package -DskipTests=true"
             }
         }
         
