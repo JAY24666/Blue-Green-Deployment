@@ -16,6 +16,12 @@ pipeline {
     }
 
     stages {
+        stage('Debug DNS') {
+        steps {
+            sh 'nslookup repo.maven.apache.org || dig repo.maven.apache.org'
+        }
+        }
+
         stage('Permissions'){
             steps{
                 sh "chmod -R 777 mvnw"
