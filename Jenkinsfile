@@ -57,13 +57,13 @@ pipeline {
             }
         }
 
-        // stage('Deploy MySQL to Local K8s') {
-        //     steps {
-        //         withKubeConfig(credentialsId: 'venkat-kubect-config-creds') {
-        //             sh 'kubectl apply -f mysql-ds.yml'
-        //         }
-        //     }
-        // }
+        stage('Deploy MySQL to Local K8s') {
+            steps {
+                withKubeConfig(credentialsId: 'Jay-kubectl-config-creds') {
+                    sh 'kubectl apply -f mysql-ds.yml'
+                }
+            }
+        }
 
         
         // stage('Deploy MySQL Deployment and Service') {
