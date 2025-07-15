@@ -89,7 +89,7 @@ pipeline {
                     }
                     
                     withKubeConfig(credentialsId: 'Jay-kubectl-config-creds') {
-                        sh "kubectl apply -f ${deploymentFile} "
+                        sh "kubectl apply -f ${deploymentFile}"
                         
                     }
                 }
